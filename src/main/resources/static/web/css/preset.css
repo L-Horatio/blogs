@@ -34,9 +34,9 @@ h1,h2,h3,h4,h5,h6{
 }
 p{
     font-family: 'Lato', sans-serif;
-    font-size: 16px;
+    font-size: 30px;
     font-weight: 300;
-    color: #3f4360;
+    color: aliceblue;
     line-height: 1.2222;
 }
 ul,ol{

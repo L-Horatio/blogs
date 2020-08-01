@@ -1,4 +1,4 @@
-package cn.horatio.blogs.impl;
+package cn.horatio.blogs.service.impl;
 
 import cn.horatio.blogs.entity.User;
 import cn.horatio.blogs.exception.DuplicateKeyException;
