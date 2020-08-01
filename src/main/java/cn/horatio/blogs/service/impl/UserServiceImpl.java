@@ -3,6 +3,8 @@ package cn.horatio.blogs.service.impl;
 import cn.horatio.blogs.entity.User;
 import cn.horatio.blogs.exception.DuplicateKeyException;
 import cn.horatio.blogs.exception.InsertException;
+import cn.horatio.blogs.exception.PasswordNotMatchException;
+import cn.horatio.blogs.exception.UserNotFoundException;
 import cn.horatio.blogs.mapper.UserMapper;
 import cn.horatio.blogs.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +63,22 @@ public class UserServiceImpl implements IUserService {
             // 否：用户名已经被占用，抛出异常DuplicateKeyException异常
             throw new DuplicateKeyException("注册失败！尝试注册的用户名(" + user.getUsername() +")已经被注册！");
         }
+    }
+
+    @Override
+    public User login(String username, String password) throws UserNotFoundException, PasswordNotMatchException {
+        // 根据参数数据查询用户数据
+        // 判断用户数据是否为null
+        // 是：为null，用户名不存在，抛出UserNotFoundException异常
+        // 否：非null，用户名存在，找到了数据，取出盐值
+        // 对参数password执行加密
+        // 判断密码是否匹配
+        // 是：匹配，密码正确，则判断是否被删除
+        //     是：已被删除，则抛出UserNotFoundException异常
+        //     否：没被删除，则登陆成功，将第1步查询的用户数据中的盐值和密码设置为null
+        //     返回用户数据
+        // 否：抛出PasswordNotMatchException异常
+        return null;
     }
 
     @Autowired
