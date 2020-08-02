@@ -31,9 +31,20 @@ public interface IUserService {
      * 用户登录
      * @param username 用户名
      * @param password 密码
-     * @return
+     * @return 成功登录的用户数据
      * @throws UserNotFoundException
      * @throws PasswordNotMatchException
      */
     User login(String username, String password) throws UserNotFoundException, PasswordNotMatchException;
+
+    /**
+     * 修改密码
+     * @param uid 用户id
+     * @param oldPassword 旧密码
+     * @param newPassword 新密码
+     * @throws UserNotFoundException
+     * @throws PasswordNotMatchException
+     * @throws UserNotFoundException
+     */
+    void changePassword(Integer uid, String oldPassword, String newPassword) throws UserNotFoundException, PasswordNotMatchException, UserNotFoundException;
 }

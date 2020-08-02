@@ -2723,6 +2723,14 @@ hgroup h4{
     margin-top: 300px;
     margin-left: 700px;
 }
+.fourthBtn-1{
+    width: 1500px;
+    background: #5e68cab3;
+    border-radius: 5px;
+    padding: 30px 36px;
+    margin-top: 200px;
+    margin-left: -200px;
+}
 .purchaseBtn{
     background: #5ed7b9 none repeat scroll 0 0;
     border-radius: 5px;
@@ -2734,6 +2742,9 @@ hgroup h4{
     padding: 10px 15px;
 }
 .form-group{
+    color: #464d92;
+}
+.form-group-1{
     color: aliceblue;
 }
 .purchaseBtn:hover,

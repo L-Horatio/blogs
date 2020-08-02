@@ -21,19 +21,46 @@ import java.util.Date;
 public class UserServiceTestCase {
 
     @Autowired
-    private IUserService iUserService;
+    private IUserService userService;
 
     @Test
     public void reg(){
         try {
             User user = new User();
-            user.setUsername("pringMVC2");
+            user.setUsername("spring");
             user.setPassword("1234");
             user.setGender(1);
             user.setPhone("1365454875");
             user.setEmail("pringMVC2@163.com");
-            User result = iUserService.reg(user);
+            User result = userService.reg(user);
             System.err.println("result=" + result);
+        }catch (ServiceException e) {
+            System.err.println("错误类型:" + e.getClass().getName());
+            System.err.println("错误描述:" + e.getMessage());
+        }
+    }
+
+    @Test
+    public void login(){
+        try {
+            String username = "spring";
+            String password = "1234";
+            User data = userService.login(username, password);
+            System.err.println(data);
+        }catch (ServiceException e) {
+            System.err.println("错误类型:" + e.getClass().getName());
+            System.err.println("错误描述:" + e.getMessage());
+        }
+    }
+
+    @Test
+    public void update(){
+        try {
+            Integer uid = 10;
+            String oldPassword = "123456";
+            String newPassword = "1234";
+            userService.changePassword(uid, oldPassword, newPassword);
+            System.err.println("OK!");
         }catch (ServiceException e) {
             System.err.println("错误类型:" + e.getClass().getName());
             System.err.println("错误描述:" + e.getMessage());

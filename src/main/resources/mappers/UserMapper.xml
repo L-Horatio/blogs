@@ -25,6 +25,22 @@
         )
     </insert>
 
+    <!--修改密码-->
+    <!--Integer updatePassword(@Param("uid") Integer uid,
+                           @Param("password") String password,
+                           @Param("modifiedUser") String modifiedUser,
+                           @Param("modifiedTime") Date modifiedTime);-->
+    <update id="updatePassword">
+        UPDATE
+            t_user
+        SET
+            password=#{password},
+            modified_user=#{modifiedUser},
+            modified_time=#{modifiedTime}
+        WHERE
+            id=#{uid}
+    </update>
+
     <!--根据用户名查询用户数据-->
     <!--应用于：注册，登录-->
     <!--User findByUsername(String username);-->
@@ -38,5 +54,18 @@
             t_user
         WHERE
             username=#{username}
+    </select>
+
+    <!--根据用户id查询用户数据-->
+    <!--User findById(Integer id);-->
+    <select id="findById" resultType="cn.horatio.blogs.entity.User">
+        SELECT
+            password, salt,
+            username,
+            is_delete isDelete
+        FROM
+            t_user
+        WHERE
+            id=#{id}
     </select>
 </mapper>
