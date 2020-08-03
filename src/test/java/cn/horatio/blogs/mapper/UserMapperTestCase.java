@@ -24,7 +24,7 @@ public class UserMapperTestCase {
     @Test
     public void addnew(){
         User user = new User();
-        user.setUsername("root");
+        user.setUsername("spring");
         user.setPassword("1234");
         user.setPhone("1365454875");
         user.setEmail("163@163.com");

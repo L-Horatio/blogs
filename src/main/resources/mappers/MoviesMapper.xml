@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.horatio.blogs.mapper.MoviesMapper">
+
+    <!--新增电影-->
+    <!--Integer addnew(Movies movies);-->
+    <insert id="addnew" parameterType="cn.horatio.blogs.entity.Movies"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_movies(
+            images, QRCodes,
+            movies, type,
+            level, description,
+            download, is_delete,
+            created_user, created_time,
+            modified_user, modified_time
+        ) VALUES (
+            #{images}, #{QRCodes},
+            #{movies}, #{type},
+            #{level}, #{description},
+            #{download}, #{isDelete},
+            #{createdUser}, #{createdTime},
+            #{modifiedUser}, #{modifiedTime}
+        )
+    </insert>
+</mapper>

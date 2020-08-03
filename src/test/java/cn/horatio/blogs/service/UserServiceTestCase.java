@@ -2,7 +2,6 @@ package cn.horatio.blogs.service;
 
 import cn.horatio.blogs.entity.User;
 import cn.horatio.blogs.exception.ServiceException;
-import cn.horatio.blogs.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
