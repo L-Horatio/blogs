@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Spire | Creative Agency HTML5 Responsive Template</title>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Include All CSS -->
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
@@ -44,7 +44,7 @@
         </div>
         <!-- ===============End Loader============== -->
         <!-- ===================== Header section ======================= -->
-        <header class="headerArea transparentHeader" id="header">
+        <header class="headerArea" id="header">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-sm-3 col-xs-12 text-left hidden-lg hidden-md hidden-sm">
@@ -79,6 +79,7 @@
                     </div>
                 </div>
             </div>
+            <!-- ===================== Main menu section ======================= -->
             <nav class="mainMenu">
                 <div class="container">
                     <div class="row">
@@ -96,7 +97,7 @@
                                 <li class="hasChild">
                                     <a href="javascript:void(0)">Pages</a>
                                     <ul class="dropDown">
-                                        <li><a href="index_2.html">Home One</a></li>
+                                        <li><a href="index2.html">Home Two</a></li>
                                         <li><a href="blogCategory.html">Blog</a></li>
                                         <li><a href="blogDetails.html">Blog Details</a></li>
                                         <li><a href="project.html">Project</a></li>
@@ -112,15 +113,43 @@
                 </div>
             </nav>
         </header>
-        <!-- ===================== Video Background ======================= -->
-        <section class="videoBgArea">
-            <div class="videoOverlay"></div>
-            <div class="videoEmbed" id="videoPlayer" data-property="{videoURL:'https://youtu.be/MBxr_sQH3aI',showControls:false,containment:'self',autoPlay:false, loop:true, mute:true, startAt:0, opacity:1,}" ></div>
-            <div class="videoContent text-center">
-                <a href="#" class="playBtn"><i class="fa fa-play"></i></a>
-                <h1>Be creative</h1>
-                <p>Spire is designed specially for you.</p>
+        <!-- ===================== Call to action section ======================= -->
+        <section class="callToFirstArea">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-sm-4 col-xs-12 text-left">
+                        <h1 class="callHead">Be creative</h1>
+                    </div>
+                    <div class="col-lg-4 col-sm-4 col-xs-12 text-center">
+                        <p class="callDesc">Spire is designed specially for you.</p>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-xs-12 text-right">
+                        <a href="#" class="callBtn">
+                            <i class="ion-android-bulb"></i>
+                            <span>Learn more</span>
+                        </a>
+                    </div>
+                </div>
             </div>
+        </section>
+        <!-- ===================== Slider section ======================= -->
+        <section class="sliderArea">
+            <div id="homeSlider">
+                <div class="sliderImg" data-effect="blinds2" data-speed="2000">
+                    <img src="images/slider/slider1.jpg" alt="">
+                </div>
+                <div class="sliderImg" data-effect="boxRandomFlyIn" data-speed="2000">
+                    <img src="images/slider/slider2.jpg" alt="">
+                </div>
+                <div class="sliderImg" data-effect="unzipDown" data-speed="2000">
+                    <img src="images/slider/slider3.jpg" alt="">
+                </div>
+            </div>
+            <ul class="sliderBtn">
+                <li class="customLink" data-target="1"></li>
+                <li class="customLink" data-target="2"></li>
+                <li class="customLink" data-target="3"></li>
+            </ul>
             <a href="#work" class="downArrow"><i class="ion-android-arrow-down"></i></a>
         </section>
         <!-- ===================== Work section ======================= -->
@@ -128,18 +157,18 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center wow fadeInUp" data-wow-duration="700ms" data-wow-delay="300ms">
-                        <h2 class="commonTittle">Work</h2>
+                        <h2 class="commonTittle">Movies</h2>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-4 col-xs-12">
                         <ul class="mixiBtn wow fadeInUp" data-wow-duration="700ms" data-wow-delay="300ms">
-                            <li class="active filter" data-filter="all"><a href="#"><span>All</span> <i class="ion-android-menu hidden-lg hidden-md hidden-sm"></i></a></li>
-                            <li class="filter" data-filter="photo"><a href="#">Photography</a></li>
-                            <li class="filter" data-filter="graphic"><a href="#">Graphic</a></li>
-                            <li class="filter" data-filter="wdesign"><a href="#">Web design</a></li>
-                            <li class="filter" data-filter="ldesign"><a href="#">Logo design</a></li>
-                            <li class="filter" data-filter="print"><a href="#">Print</a></li>
+                            <li class="active filter" data-filter="all"><a href="#"><span>全部</span> <i class="ion-android-menu hidden-lg hidden-md hidden-sm"></i></a></li>
+                            <li class="filter" data-filter="photo"><a href="#">战争片</a></li>
+                            <li class="filter" data-filter="graphic"><a href="#">科幻片</a></li>
+                            <li class="filter" data-filter="wdesign"><a href="#">爱情片</a></li>
+                            <li class="filter" data-filter="ldesign"><a href="#">恐怖片</a></li>
+                            <li class="filter" data-filter="print"><a href="#">动画片</a></li>
                         </ul>
                         <div class="chartContent text-center hidden-xs wow fadeInUp" data-wow-duration="700ms" data-wow-delay="300ms">
                             <div class="chartBar" data-percent="73">
@@ -206,7 +235,7 @@
                                     <div class="row hidden-xs">
                                         <div class="col-lg-12 text-center">
                                             <div class="moreInDribble">
-                                                <p>Find more of our work on Dribbble:</p>
+                                                <p>Find more movies like this:</p>
                                                 <a href="#"><i class="ion-social-dribbble-outline"></i></a>
                                             </div>
                                         </div>
@@ -419,7 +448,7 @@
         <!-- ===================== Big dream section ======================= -->
         <section class="bigDreamArea">
             <div class="overlay black"></div>
-            <div class="videoEmbed" id="bigDream" data-property="{videoURL:'https://youtu.be/k1Dt4YvQwTM',showControls:false,containment:'self',autoPlay:false, loop:true, mute:true, startAt:2, opacity:1,}" ></div>
+            <div class="videoEmbed" id="bigDream" data-property="{videoURL:'',showControls:false,containment:'self',autoPlay:false, loop:true, mute:true, startAt:2, opacity:1,}" ></div>
             <div class="container dreamZindex">
                 <div class="row">
                     <div class="col-lg-offset-3 col-lg-7 col-sm-12 col-xs-12 text-center wow fadeInUp" data-wow-duration="700ms" data-wow-delay="300ms">
@@ -749,7 +778,7 @@
                         <div class="newsContent text-center">
                             <img src="images/blog/news2.jpg" alt="">
                             <div class="news">
-                                <h2><a href="newsCategory.html">TOP 10 apps ever</a></h2>
+                                <h2><a href="newsCategory.html">TOP 10 <br>apps ever</a></h2>
                                 <a href="#">22 april 2015</a>
                                 <p>Maecenas verve leo, vehicula eu enim vel, commodo viverra sense.</p>
                             </div>
@@ -1063,13 +1092,12 @@
                 </div>
             </div>
         </section>
-        <!-- ===================== Header section ======================= -->
 
         <!-- Include All JS -->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-        <script type="text/javascript" src="js/gmaps.js"></script>
+        <!---<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+        <script type="text/javascript" src="js/gmaps.js"></script>--->
         <script type="text/javascript" src="js/appear.js"></script>
         <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
         <script type="text/javascript" src="js/mixer.js"></script>

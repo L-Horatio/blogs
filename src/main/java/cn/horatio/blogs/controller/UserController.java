@@ -41,7 +41,7 @@ public class UserController extends BaseController{
         return new ResponseResult<Void>(SUCCESS);
     }
 
-    @PostMapping("/password.do")
+    @RequestMapping("/password.do")
     public ResponseResult<Void> changePassword(@RequestParam("old_password") String oldPassword,@RequestParam("new_password") String newPassword, HttpSession session) {
         // 获取当前登录的用户的id
         Integer uid = getUidFromSession(session);
