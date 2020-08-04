@@ -26,8 +26,8 @@ public class MoviesController extends BaseController{
     private IMoviesService moviesService;
 
     @PostMapping("/add.do")
-    public ResponseResult<Void> handleCreate(String username, Movies movies) {
-        moviesService.create(username, movies);
+    public ResponseResult<Void> handleCreate(HttpSession session, Movies movies) {
+        moviesService.create(session.getAttribute("username").toString(), movies);
         return new ResponseResult<Void>(SUCCESS);
     }
 }

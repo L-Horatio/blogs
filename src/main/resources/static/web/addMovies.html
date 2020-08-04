@@ -161,62 +161,62 @@
                                 <div class="panel panel-default">
                                     <ul class="nav nav-tabs">
                                         <!--<li><a href="password.html">修改密码</a></li>
-                                        <li><a href="userdata.html">个人资料</a></li>
-                                        <li><a href="upload.html">上传头像</a></li>-->
+                                        <li><a href="userdata.html">个人资料</a></li>-->
                                         <li class="active"><a href="#">新增电影</a></li>
+                                        <li><a href="moviesList.html">电影列表</a></li>
                                     </ul>
-                                    <form class="form-horizontal" role="form">
+                                    <form id="form-movies" class="form-horizontal" role="form">
                                         <div class="form-group">
                                             <label class="col-md-2 control-label"><span class="txtred">*</span>电影名字：</label>
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control" placeholder="请填写电影姓名">
+                                                <input name="movies" type="text" class="form-control" placeholder="请填写电影姓名">
                                             </div>
                                         </div>
                                         <div class="address_content" data-toggle="distpicker">
                                             <div class="form-group">
                                                 <label class="col-md-2 control-label"><span class="txtred">*</span>推荐级别：</label>
                                                 <div class="col-md-3">
-                                                    <input type="radio" name="1">一般&nbsp;
-                                                    <input type="radio" name="1">好看&nbsp;
-                                                    <input type="radio" name="1">特别&nbsp;
-                                                    <input type="radio" name="1">超级&nbsp;
+                                                    <input value="level-1" type="radio" name="level" checked="checked">超级&nbsp;
+                                                    <input value="level-2" type="radio" name="level">特别&nbsp;
+                                                    <input value="level-3" type="radio" name="level">好看&nbsp;
+                                                    <input value="level-4" type="radio" name="level">一般&nbsp;
                                                 </div>
                                                 <label class="col-md-2 control-label"><span class="txtred">*</span>电影类型：</label>
                                                 <div class="col-md-3">
-                                                    <input type="radio" name="1">战争&nbsp;
-                                                    <input type="radio" name="1">科幻&nbsp;
-                                                    <input type="radio" name="1">爱情&nbsp;
-                                                    <input type="radio" name="1">恐怖&nbsp;
-                                                    <input type="radio" name="1">动画&nbsp;
+                                                    <input value="type-1" type="radio" name="type" checked="checked">战争&nbsp;
+                                                    <input value="type-2" type="radio" name="type">科幻&nbsp;
+                                                    <input value="type-3" type="radio" name="type">爱情&nbsp;
+                                                    <input value="type-4" type="radio" name="type">恐怖&nbsp;
+                                                    <input value="type-5" type="radio" name="type">动画&nbsp;
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label"><span class="txtred">*</span>简单描述：</label>
                                             <div class="col-md-8">
-                                                <textarea class="form-control" rows="3" placeholder="请简要描述电影剧情、演员等"></textarea>
+                                                <textarea name="description" class="form-control" rows="3" placeholder="请简要描述电影剧情、演员等"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label"><span class="txtred">*</span>上传主图：</label>
                                             <div class="col-md-3">
-                                                <input type="file">
+                                                <input name="images" type="file">
                                             </div>
                                             <label class="col-md-2 control-label"><span class="txtred">*</span>上传二维码：</label>
                                             <div class="col-md-3">
-                                                <input type="file">
+                                                <input name="QRCodes" type="file">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label"><span class="txtred">*</span>下载地址：</label>
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control" placeholder="请输入地址类型，如：家、公司或者学校">
+                                                <input name="download" type="text" class="form-control" placeholder="请输入下载地址">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">&nbsp;&nbsp;&nbsp;</label>
                                             <div class="col-sm-10">
-                                                <input type="button" class="col-md-1 btn btn-primary" value="保存" />
+                                                <input id="btn-submit" type="button" class="col-md-1 btn btn-primary" value="保存" />
                                                 <input type="reset" class="col-md-offset-1 col-md-1 btn btn-primary" value="重置" />
                                             </div>
                                         </div>
@@ -309,7 +309,6 @@
         <!-- Include All JS -->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
         <script type="text/javascript" src="js/gmaps.js"></script>
         <script type="text/javascript" src="js/appear.js"></script>
         <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
@@ -321,13 +320,13 @@
         <script type="text/javascript" src="js/theme.js"></script>
 
         <script type="text/javascript">
-            // 为登陆按钮绑定单击事件
-            $("#btn-login").click(function () {
+            // 为提交按钮绑定单击事件
+            $("#btn-submit").click(function () {
                 // 将请求提交到哪里
-                var url = "../user/login.do";
+                var url = "../movies/add.do";
                 // 请求参数
-                var data = $("#form-login").serialize();
-                console.log("注册参数：" + data);
+                var data = $("#form-movies").serialize();
+                console.log("新增电影参数：" + data);
                 $.ajax({
                     "url": url,
                     "data": data,
@@ -335,13 +334,12 @@
                     "dataType": "json",
                     "success": function (json) {
                         if (json.state == 200) {
-                            alert("登录成功！")
+                            alert("保存成功！")
                         } else {
                             alert(json.message);
                         }
                     }
                 });
-
             });
         </script>
     </body>
